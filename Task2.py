@@ -18,7 +18,6 @@ print('2. С ботом (глупый)')
 print('3. С ботом (умный)')
 game_mode = int(input(': '))
 
-# player_turn = randint(1,2)
 player_count = [int(x+1) for x in range(2)]
 shuffle(player_count)
 candy_count = 2021
