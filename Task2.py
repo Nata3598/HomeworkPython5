@@ -75,7 +75,6 @@ while candy_count > 28:
             candy_count -= mode_algorithm_2 (player_count)
         else: candy_count -= mode_algorithm_3 (player_count, candy_count)
         
-
     else: 
         print ('Ошибка! Не верный режим')
         break
