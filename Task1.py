@@ -1,12 +1,12 @@
 # Напишите программу, удаляющую из текста все слова, содержащие ""абв"".
-string_input = input("введите строку: ")
-if string_input == '':
-    string_input = "привет абв мир улеабвтел"
+in_str = input("Введите строку: ")
 
-string_result = string_input.split(' ')
-string_result = filter(lambda s: not 'абв' in s , string_result)
-print (' '.join(list(string_result)), ' <-- filter()')
+print('=== filter() ===')
+res = in_str.split(' ')
+res = filter( lambda s: not 'абв' in s, res )
+print ( ' '.join(list(res)) )
 
-string_result = string_input.split(' ')
-string_result = [s for s in string_result if s.find('абв') == -1]
-print (' '.join(list(string_result)), ' <-- python comrehension')
+print('=== python comrehension ===')
+res = in_str.split(' ')
+res = [ s for s in res if s.find('абв') == -1 ]
+print ( ' '.join(list(res)) )
