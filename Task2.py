@@ -24,20 +24,22 @@ candy_count = 2021
 log_test = []
 
 def mode_algorithm_1(player_count): 
-    turn_value = int(input(f'Введите число от 1 до 28: '))
-    if 0 < turn_value < 29:
-        print("\033[H\033[J")
-        player_count.insert(0, player_count.pop())
-        return turn_value
-    else: 
-        print("\033[H\033[J")
+    s_value = input(f'Введите число от 1 до 28: ')
+    if (s_value == ''):
         print ('Не верный ход!')
         return 0
+
+    turn_value = int(s_value)
+    if 0 < turn_value < 29:
+        player_count.insert(0, player_count.pop())
+        return turn_value
+
+    print ('Не верный ход!')
+    return 0
 
 
 def mode_algorithm_2(player_count): 
     turn_value = randint(1,28)
-    print("\033[H\033[J")
     print ('Игрок № ', player_count[0], ' выбрал: ', turn_value)
     player_count.insert(0, player_count.pop())
     return turn_value
@@ -46,7 +48,6 @@ def mode_algorithm_2(player_count):
 def mode_algorithm_3(player_count, candy): 
     turn_value = candy - (candy//29*29)
     if turn_value == 0: turn_value = randint(1,28)
-    print("\033[H\033[J")
     print ('Игрок № ', player_count[0], ' выбрал: ', turn_value)
     player_count.insert(0, player_count.pop())
     return turn_value
